@@ -24,6 +24,20 @@ void adicionarArestas(Grafo* G, int origem, int destino){
     G->num_arestas++;
 }
 
+void Kn(Grafo* g){
+    for (int i = 0; i < g->num_vertices; i++){
+        for (int j = 0; j < g->num_vertices; j++){
+            if(i == j){
+                g->arestas[i][j] = 0;
+            }else{
+                adicionarArestas(g, i, j);
+            }
+        }
+    }
+    
+    
+}
+
 void printGrafo(Grafo* G){
     printf("Numero de Vértices %d\n", G->num_vertices);
     printf("Numero de Vértices %d\n", G->num_arestas);
